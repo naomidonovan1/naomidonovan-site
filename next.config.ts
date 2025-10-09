@@ -1,7 +1,7 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  swcMinify: false,                 // avoids the SWC edge-case you hit
+  reactStrictMode: true,
+  experimental: { webpackBuildWorker: false },
 };
-
-export default nextConfig;
+module.exports = nextConfig;
