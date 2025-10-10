@@ -24,7 +24,7 @@ interface SectionProps {
 const sections = [
   { id: "about", title: "About" },
   { id: "roles", title: "Roles" },
-  { id: "teaching", title: "Teaching" },
+  // { id: "teaching", title: "Teaching" },
   { id: "contact", title: "Contact" },
 ];
 
@@ -113,15 +113,10 @@ export default function Home() {
                 <SiGoogledocs size={24} />
               </a>
             </div>
-          </aside>
-        </div >
-      </div >
-    </main >
-  );
-}
 
-{/* Right column */ }
-{/* <main className="pb-24">
+
+            {/* Right column */}
+            <main className="pb-24">
               <Section id="about" index={1} title="About">
                 <p className="leading-relaxed text-zinc-300">
                   I’m a third-year neuroscience PhD candidate at UCSF working on building deep-learning models
@@ -136,10 +131,10 @@ export default function Home() {
                       {e.role} <span className="text-violet-400/80"> {e.org}</span>
                     </h3>
                     <p className="text-sm text-zinc-400">{e.period}</p>
-                    <p className="mt-2 text-zinc-300">{e.summary}</p> */}
+                    <p className="mt-2 text-zinc-300">{e.summary}</p>
 
-{/* show publications only if at least one exists */ }
-{/* {e.publications && e.publications.length > 0 && (
+                    {/* show publications only if at least one exists */}
+                    {e.publications && e.publications.length > 0 && (
                       <div className="mt-3 space-y-1 text-sm text-zinc-400">
                         {e.publications.map((p, i) => (
                           <p key={i}> -- {p}</p>
@@ -148,14 +143,15 @@ export default function Home() {
                     )}
                   </div>
                 ))}
-              </Section> */}
+              </Section>
+            </main>
+          </aside>
+        </div >
+      </div >
+    </main >
+  );
+}
 
-{/* </main> */ }
-//         </div >
-//       </div >
-//     </main >
-//   );
-// }
 
 function Section({ id, index, title, children }: SectionProps) {
   return (
