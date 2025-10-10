@@ -10,7 +10,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, type MotionProps } from "framer-motion";
 import { SiGithub, SiLinkedin, SiGmail, SiGoogledocs } from "react-icons/si";
 import { i } from "framer-motion/client";
 
@@ -21,9 +21,14 @@ interface SectionProps {
   children: React.ReactNode;
 }
 
+// Create a typed motion h2 component
+const MHeading = motion.h2 as React.ComponentType<
+  React.ComponentProps<"h2"> & MotionProps
+>;
+
 const sections = [
   { id: "about", title: "About" },
-  { id: "roles", title: "Roles" },
+  { id: "experience", title: "Experiences" },
   // { id: "teaching", title: "Teaching" },
   { id: "contact", title: "Contact" },
 ];
@@ -65,14 +70,14 @@ export default function Home() {
         <div className="grid gap-8 lg:grid-cols-[380px_1fr] lg:gap-16 py-12">
           {/* Left column */}
           <aside className="sticky top-10 self-start">
-            <motion.h1
+            <MHeading
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-            // className="text-4xl font-semibold tracking-tight text-zinc-50"
+              className="text-4xl font-semibold tracking-tight text-zinc-50"
             >
               Naomi Donovan
-            </motion.h1>
+            </MHeading>
             <p className="mt-3 max-w-xs text-zinc-400">
               Computational neuroscientist. I like building models and thinking about the brain.
             </p>
@@ -113,39 +118,40 @@ export default function Home() {
                 <SiGoogledocs size={24} />
               </a>
             </div>
-
-
-            {/* Right column */}
-            <main className="pb-24">
-              <Section id="about" index={1} title="About">
-                <p className="leading-relaxed text-zinc-300">
-                  I’m a third-year neuroscience PhD candidate at UCSF working on building deep-learning models
-                  to better understand how neurons communicate to each other and represent the external world.
-                </p>
-              </Section>
-
-              <Section id="roles" index={2} title="Roles">
-                {roles.map((e, idx) => (
-                  <div key={idx} className="mb-6">
-                    <h3 className="text-lg font-medium text-zinc-100">
-                      {e.role} <span className="text-violet-400/80"> {e.org}</span>
-                    </h3>
-                    <p className="text-sm text-zinc-400">{e.period}</p>
-                    <p className="mt-2 text-zinc-300">{e.summary}</p>
-
-                    {/* show publications only if at least one exists */}
-                    {e.publications && e.publications.length > 0 && (
-                      <div className="mt-3 space-y-1 text-sm text-zinc-400">
-                        {e.publications.map((p, i) => (
-                          <p key={i}> -- {p}</p>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </Section>
-            </main>
           </aside>
+
+
+          {/* Right column */}
+          <main className="pb-24">
+            <Section id="about" index={1} title="About">
+              <p className="leading-relaxed text-zinc-300">
+                I’m a third-year neuroscience PhD candidate at UCSF working on building deep-learning models
+                to better understand how neurons communicate to each other and represent the external world.
+              </p>
+            </Section>
+
+            <Section id="experience" index={2} title="Experiences">
+              {roles.map((e, idx) => (
+                <div key={idx} className="mb-6">
+                  <h3 className="text-lg font-medium text-zinc-100">
+                    {e.role} <span className="text-violet-400/80"> {e.org}</span>
+                  </h3>
+                  <p className="text-sm text-zinc-400">{e.period}</p>
+                  <p className="mt-2 text-zinc-300">{e.summary}</p>
+
+                  {/* show publications only if at least one exists */}
+                  {e.publications && e.publications.length > 0 && (
+                    <div className="mt-3 space-y-1 text-sm text-zinc-400">
+                      {e.publications.map((p, i) => (
+                        <p key={i}> -- {p}</p>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </Section>
+          </main>
+
         </div >
       </div >
     </main >
@@ -156,18 +162,18 @@ export default function Home() {
 function Section({ id, index, title, children }: SectionProps) {
   return (
     <section id={id} className="scroll-mt-24">
-      <motion.h2
+      <MHeading
         initial={{ opacity: 0, y: 8 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.45 }}
-      // className="flex items-center gap-3 text-2xl font-semibold text-zinc-100"
+        className="flex items-center gap-3 text-2xl font-semibold text-zinc-100"
       >
         <span className="text-violet-400/80">{String(index).padStart(2, "0")}.</span>
         {title}
         <span className="h-[1px] flex-1 bg-gradient-to-r from-violet-400/40 via-transparent to-transparent" />
-      </motion.h2>
-      <div className="mt-5">{children}</div>
+      </MHeading>
+      <div className="mt-5"> {children}</div>
     </section>
   );
 }
