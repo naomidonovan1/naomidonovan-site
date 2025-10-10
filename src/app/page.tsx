@@ -104,16 +104,19 @@ export default function Home() {
 
             {/* Socials */}
             <div className="mt-10 flex items-center gap-4 text-zinc-400">
-              <a aria-label="GitHub" href="https:github.com/naomidonovan1" className="hover:text-zinc-100">
+              <a aria-label="GitHub" href="https:github.com/naomidonovan1" className="hover:text-violet-400" target="_blank"
+                rel="noopener noreferrer">
                 <SiGithub size={24} />
               </a>
-              <a aria-label="LinkedIn" href="https:www.linkedin.com/in/naomidonovan/" className="hover:text-zinc-100">
+              <a aria-label="LinkedIn" href="https:www.linkedin.com/in/naomidonovan/" className="hover:text-violet-400" target="_blank"
+                rel="noopener noreferrer">
                 <SiLinkedin size={24} />
               </a>
-              <a aria-label="Email" href="mailto:naomi.donovan@ucsf.edu" className="hover:text-zinc-100">
+              <a aria-label="Email" href="mailto:naomi.donovan@ucsf.edu" className="hover:text-violet-400">
                 <SiGmail size={24} />
               </a>
-              <a aria-label="CV" href="../../public/naomidonovan_cv_oct08_2025.pdf" className="hover:text-zinc-100">
+              <a aria-label="CV" href="../../public/naomidonovan_cv_oct08_2025.pdf" className="hover:text-violet-400" target="_blank"
+                rel="noopener noreferrer">
                 <SiGoogledocs size={24} />
               </a>
             </div>
