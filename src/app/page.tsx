@@ -97,15 +97,9 @@ export default function Home() {
                 ))}
               </ul>
             </nav>
-          </aside>
-        </div >
-      </div >
-    </main >
-  );
-}
 
-{/* Socials */ }
-{/* <div className="mt-10 flex items-center gap-4 text-zinc-400">
+            {/* Socials */}
+            <div className="mt-10 flex items-center gap-4 text-zinc-400">
               <a aria-label="GitHub" href="https:github.com/naomidonovan1" className="hover:text-zinc-100">
                 <SiGithub size={24} />
               </a>
@@ -119,7 +113,12 @@ export default function Home() {
                 <SiGoogledocs size={24} />
               </a>
             </div>
-          </aside> */}
+          </aside>
+        </div >
+      </div >
+    </main >
+  );
+}
 
 {/* Right column */ }
 {/* <main className="pb-24">
