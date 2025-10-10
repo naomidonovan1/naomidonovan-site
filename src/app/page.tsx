@@ -1,4 +1,19 @@
+// "use client";
+// export default function Home() {
+//   return (
+//     <main style={{ minHeight: "100vh", display: "grid", placeItems: "center", color: "#ddd" }}>
+//       <h1>Naomi site — smoke test ✅</h1>
+//     </main>
+//   );
+// }
+
 "use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import { SiGithub, SiLinkedin, SiGmail, SiGoogledocs } from "react-icons/si";
+import { i } from "framer-motion/client";
+
 export default function Home() {
   return (
     <main style={{ minHeight: "100vh", display: "grid", placeItems: "center", color: "#ddd" }}>
@@ -6,13 +21,6 @@ export default function Home() {
     </main>
   );
 }
-
-// "use client";
-
-// import React from "react";
-// import { motion } from "framer-motion";
-// import { SiGithub, SiLinkedin, SiGmail, SiGoogledocs } from "react-icons/si";
-// import { i } from "framer-motion/client";
 
 // const sections = [
 //   { id: "about", title: "About" },
