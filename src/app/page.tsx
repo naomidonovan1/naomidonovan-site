@@ -104,11 +104,11 @@ export default function Home() {
 
             {/* Socials */}
             <div className="mt-10 flex items-center gap-4 text-zinc-400">
-              <a aria-label="GitHub" href="https:github.com/naomidonovan1" className="hover:text-violet-400" target="_blank"
+              <a aria-label="GitHub" href="https://github.com/naomidonovan1" className="hover:text-violet-400" target="_blank"
                 rel="noopener noreferrer">
                 <SiGithub size={24} />
               </a>
-              <a aria-label="LinkedIn" href="https:www.linkedin.com/in/naomidonovan/" className="hover:text-violet-400" target="_blank"
+              <a aria-label="LinkedIn" href="https://www.linkedin.com/in/naomidonovan/" className="hover:text-violet-400" target="_blank"
                 rel="noopener noreferrer">
                 <SiLinkedin size={24} />
               </a>
