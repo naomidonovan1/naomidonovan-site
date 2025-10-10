@@ -14,12 +14,20 @@ import { motion } from "framer-motion";
 import { SiGithub, SiLinkedin, SiGmail, SiGoogledocs } from "react-icons/si";
 import { i } from "framer-motion/client";
 
+interface SectionProps {
+  id: string;
+  index: number;
+  title: string;
+  children: React.ReactNode;
+}
+
 const sections = [
   { id: "about", title: "About" },
   { id: "roles", title: "Roles" },
   { id: "teaching", title: "Teaching" },
   { id: "contact", title: "Contact" },
 ];
+
 
 const roles = [
   {
@@ -150,7 +158,7 @@ export default function Home() {
 //   );
 // }
 
-function Section({ id, index, title, children }: any) {
+function Section({ id, index, title, children }: SectionProps) {
   return (
     <section id={id} className="scroll-mt-24">
       <motion.h2
