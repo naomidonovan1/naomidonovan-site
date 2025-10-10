@@ -59,7 +59,6 @@ const roles = [
       ["Babola TA*, Donovan N*, Darcy SS*, Spjut CD, & Kanold PO (2025). Limiting hearing loss in transgenic mouse models. eNeuro. https://doi.org/10.1523/ENEURO.0465-24.2025 (* shared first author)",
         "Donovan N, Babola TA, Darcy SS, & Kanold PO (2023, April). Preventing progressive hearing loss in common transgenic mouse lines. Poster presented at Day of Undergraduate Research in Engineering, the Arts & Humanities, Medicine, and the Sciences (DREAMS), Johns Hopkins University, Baltimore, MD."
       ]
-
   }
 ];
 
@@ -134,14 +133,14 @@ export default function Home() {
               {roles.map((e, idx) => (
                 <div key={idx} className="mb-6">
                   <h3 className="text-lg font-medium text-zinc-100">
-                    {e.role} <span className="text-violet-400/80"> {e.org}</span>
+                    {e.role} <span className="text-violet-400"> {e.org}</span>
                   </h3>
                   <p className="text-sm text-zinc-400">{e.period}</p>
-                  <p className="mt-2 text-zinc-300">{e.summary}</p>
+                  <p className="mt-2 text-zinc-300 mb-0">{e.summary}</p>
 
                   {/* show publications only if at least one exists */}
                   {e.publications && e.publications.length > 0 && (
-                    <div className="mt-3 space-y-1 text-sm text-zinc-400">
+                    <div className="mt-3 space-y-1 text-sm text-zinc-400 mb-10">
                       {e.publications.map((p, i) => (
                         <p key={i}> -- {p}</p>
                       ))}
@@ -150,7 +149,22 @@ export default function Home() {
                 </div>
               ))}
             </Section>
+
+            <Section id="contact" index={3} title="Contact">
+              <p className="leading-relaxed text-zinc-300">
+                Feel free to reach out to me via email at{" "}
+                <a
+                  href="mailto:naomi.donovan@ucsf.edu"
+                  className="hover:text-violet-400 hover:text-violet-200"
+                >
+                  naomi.donovan@ucsf.edu
+                </a>
+              </p>
+            </Section>
+
+
           </main>
+
 
         </div >
       </div >
@@ -161,7 +175,7 @@ export default function Home() {
 
 function Section({ id, index, title, children }: SectionProps) {
   return (
-    <section id={id} className="scroll-mt-24">
+    <section id={id} className="scroll-mt-24 mb-8">
       <MHeading
         initial={{ opacity: 0, y: 8 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -173,7 +187,9 @@ function Section({ id, index, title, children }: SectionProps) {
         {title}
         <span className="h-[1px] flex-1 bg-gradient-to-r from-violet-400/40 via-transparent to-transparent" />
       </MHeading>
-      <div className="mt-5"> {children}</div>
+      <div className="mt-5"> {children}
+
+      </div>
     </section>
   );
 }
