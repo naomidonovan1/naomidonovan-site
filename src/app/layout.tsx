@@ -14,6 +14,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Naomi Donovan",
+  icons: {
+    icon: [{ url: "/icon.png" }],
+    apple: [{ url: "/apple-icon.png" }]
+  },
 };
 
 export default function RootLayout({
