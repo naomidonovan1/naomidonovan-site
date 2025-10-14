@@ -115,7 +115,7 @@ export default function Home() {
               <a aria-label="Email" href="mailto:naomi.donovan@ucsf.edu" className="hover:text-violet-400">
                 <SiGmail size={24} />
               </a>
-              <a aria-label="CV" href="../../public/cv_naomidonovan.pdf" className="hover:text-violet-400" target="_blank"
+              <a aria-label="CV" href="/cv_naomidonovan.pdf" className="hover:text-violet-400" target="_blank"
                 rel="noopener noreferrer">
                 <SiGoogledocs size={24} />
               </a>
