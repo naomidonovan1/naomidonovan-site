@@ -45,7 +45,7 @@ const roles = [
   {
     role: "Research Intern",
     org: 'École Polytechnique Fédérale de Lausanne (EPFL)',
-    period: "May 2023 - Aug 2022",
+    period: "May 2022 - Aug 2022",
     summary:
       "Worked with Dr. Carl Petersen and the Blue Brain Project to build a biophysically-realistic model of the rat barrel cortex.",
   },
