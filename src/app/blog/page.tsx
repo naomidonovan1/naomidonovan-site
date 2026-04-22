@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: "Essays, notes, and updates from Naomi Donovan.",
 };
 
+export const dynamic = "force-dynamic";
+
 const TAB_LABELS: Record<PostFilter, string> = {
   published: "Published",
   drafts: "Drafts",

@@ -4,10 +4,10 @@ import { notFound, redirect } from "next/navigation";
 import { compileMDX } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
-import { getPublicPosts, getPostBySlug } from "@/lib/posts";
+import { getPostBySlug } from "@/lib/posts";
 import { getViewer, signOut } from "@/lib/auth";
 
-export const dynamicParams = true;
+export const dynamic = "force-dynamic";
 
 function formatDate(iso: string): string {
   const d = new Date(iso);
@@ -17,11 +17,6 @@ function formatDate(iso: string): string {
     month: "long",
     day: "numeric",
   });
-}
-
-export async function generateStaticParams() {
-  const posts = await getPublicPosts();
-  return posts.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({
