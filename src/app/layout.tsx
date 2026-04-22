@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -18,7 +18,19 @@ export const metadata: Metadata = {
     icon: [{ url: "/icon-v2.png" }],
     apple: [{ url: "/apple-icon-v2.png" }]
   },
-  viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
+  alternates: {
+    types: {
+      "application/rss+xml": [
+        { url: "/rss.xml", title: "Naomi Donovan's blog" },
+      ],
+    },
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

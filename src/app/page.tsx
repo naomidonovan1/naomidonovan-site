@@ -10,9 +10,9 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion, type MotionProps } from "framer-motion";
 import { SiGithub, SiLinkedin, SiGmail, SiGoogledocs } from "react-icons/si";
-import { i } from "framer-motion/client";
 
 interface SectionProps {
   id: string;
@@ -99,6 +99,19 @@ export default function Home() {
                     </a>
                   </li>
                 ))}
+                <li>
+                  <Link
+                    href="/blog"
+                    className="group inline-flex items-center gap-3 text-zinc-400 hover:text-zinc-100"
+                  >
+                    <span className="w-6 text-violet-400/80">
+                      {String(sections.length + 1).padStart(2, "0")}.
+                    </span>
+                    <span className="border-b border-transparent group-hover:border-violet-400/60">
+                      Writing
+                    </span>
+                  </Link>
+                </li>
               </ul>
             </nav>
 
